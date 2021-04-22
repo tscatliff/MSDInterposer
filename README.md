@@ -23,10 +23,17 @@ A write to "README.HTM" can be parsed, and a stream of characters can be sent ou
 
 This is a quick example of how on can use the technique to build a serial port, accessible by file reads and writes on any USB-capable platform.
 
-The technique could also be used to communicate over non-standard ports for a desktop, such as CAN/SPI/I2C/etc..
+The technique could also be used to communicate with non-standard ports for a desktop PC, such as CAN/SPI/I2C, or to control a relay, etc..
 
 ## Example Hardware
 This example uses a "Blue Pill" board, loaded with the STM32duino bootloader: https://github.com/rogerclarkmelbourne/STM32duino-bootloader
+
+Refer to the pinout diagram here: https://commons.wikimedia.org/wiki/File:Stm32f103_pinout_diagram.png
+
+PA9 is the (outgoing) serial TX line, and PA10 is the (incoming) RX line. Connect these pins (and ground) to the RX/TX (respectively) pins on an FTDI board or similar, at 115200 8n1.
+The board will be powered by the USB connection.
+
+Any board capable of exposing a USB device could theoretically be used.
 
 ## License
 This project is licensed under CC0 1.0 Universal.
